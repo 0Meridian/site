@@ -1,0 +1,33 @@
+{% extends 'storm/base.html' %}
+
+{% block title %}
+  Страница авторизации
+{% endblock %}
+
+{% block content %}
+  <h1>Страница авторизации</h1>
+    <form method="post" class="form-register auth">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-outline-warning" type="submit">Войти</button>
+    <hr>
+    <p>Забыли пароль? <a href="{% url 'pass-reset' %}">Получить новый</a></p>
+    </form>
+{% endblock %}
+
+
+{% block aside_block %}
+<img width="256" height="256" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Africa_and_Europe_from_a_Million_Miles_Away.png/270px-Africa_and_Europe_from_a_Million_Miles_Away.png" class="img-thumbnail">
+<p>Земля — третья от Солнца планета. Пятая по размеру среди всех планет Солнечной системы.</p>
+
+<a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B5%D0%BC%D0%BB%D1%8F" target="_blank">
+  <button class="btn btn-warning btn-sm">Посмотреть на wiki</button>
+</a>
+
+<img width="256" height="256" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/290px-FullMoon2010.jpg" class="img-thumbnail mt-4">
+<p>Луна́ — единственный естественный спутник Земли. Самый близкий к Солнцу спутник планеты.</p>
+
+<a href="https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0" target="_blank">
+  <button class="btn btn-warning btn-sm">Посмотреть на wiki</button>
+</a>
+{% endblock %}

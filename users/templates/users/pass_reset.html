@@ -1,0 +1,14 @@
+{% extends 'storm/base.html' %}
+
+{% block title %}
+  Востановление пароля
+{% endblock %}
+
+{% block content %}
+  <h1>Востановление пароля</h1>
+  <form method="post" class="form-register auth">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-danger" type="submit">Запросить новый пароль</button>
+  </form>
+{% endblock %}
